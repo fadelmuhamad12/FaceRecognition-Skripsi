@@ -20,13 +20,13 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>30</y>
+     <y>40</y>
      <width>831</width>
-     <height>651</height>
+     <height>641</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>5</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -149,7 +149,7 @@ QLineEdit#PASSWORD:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#LOGINBUTTON {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -201,7 +201,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#CLOSEBUTTON {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -284,9 +284,18 @@ background-color: rgba(255, 255, 255, 0);</string>
        <height>61</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#TRAINLINK1 {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -314,7 +323,7 @@ QPushButton#TRAINLINK1:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#ATTLINK1 {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -342,7 +351,7 @@ QPushButton#ATTLINK1:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#REPORTSLINK1 {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -370,7 +379,7 @@ QPushButton#REPORTSLINK1:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#LOGOUTBUTTON {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -398,7 +407,7 @@ QPushButton#LOGOUTBUTTON:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#ATTLINK2 {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -426,7 +435,7 @@ QPushButton#ATTLINK2:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#REPORTSLINK2 {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -628,7 +637,7 @@ QLineEdit#trainingCount:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#TRAININGBUTTON {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -656,7 +665,7 @@ QPushButton#TRAININGBUTTON:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#TRAININGBACK {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -741,7 +750,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#RECORD {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -823,7 +832,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#ATTENDANCEBACK {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -855,7 +864,7 @@ font: 75 10pt &quot;Times New Roman&quot;;
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
-      <string>*Harap Tampilkan Wajah Anda Untuk Melakukan Training Wajah</string>
+      <string>*Harap Tampilkan Wajah Anda Untuk Melakukan Absens</string>
      </property>
      <property name="scaledContents">
       <bool>false</bool>
@@ -935,7 +944,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#RECORD2 {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -1017,7 +1026,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#ATTENDANCEBACK2 {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -1049,7 +1058,7 @@ font: 75 10pt &quot;Times New Roman&quot;;
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
-      <string>*Harap Tampilkan Wajah Anda Untuk Melakukan Training Wajah</string>
+      <string>*Harap Tampilkan Wajah Anda Untuk Melakukan Absensi</string>
      </property>
      <property name="scaledContents">
       <bool>false</bool>
@@ -1153,7 +1162,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <rect>
        <x>689</x>
        <y>140</y>
-       <width>91</width>
+       <width>101</width>
        <height>22</height>
       </rect>
      </property>
@@ -1208,7 +1217,7 @@ color: rgb(0,0,0)</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#REPORTSBACK {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -1363,7 +1372,7 @@ color: rgb(0,0,0)</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton#REPORTSBACK_2 {
-	font: 75 10pt &quot;Times New Roman&quot;;
+	font: 75 14pt &quot;Times New Roman&quot;;
 	background-color: rgb(10, 50, 76);
 	border-radius:20px;
 	border-bottom: rgba(0,0,0,100);
@@ -1387,8 +1396,8 @@ QPushButton#REPORTSBACK_2:hover {
     <rect>
      <x>30</x>
      <y>0</y>
-     <width>681</width>
-     <height>51</height>
+     <width>831</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="frameShape">
