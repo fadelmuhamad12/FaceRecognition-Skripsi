@@ -40,9 +40,6 @@ class MainApp(QMainWindow, ui):
 
 
 
-
-
-
         # DATABASE UTK DOSEN
         try: 
             con = sqlite3.connect("face-reco.db")
@@ -67,7 +64,7 @@ class MainApp(QMainWindow, ui):
     #-------LOGIN PROSES--------#
     def login(self):
         kataSandi = self.PASSWORD.text()
-        if (kataSandi == "1"):
+        if (kataSandi == "Gunadarma2019"):
             self.PASSWORD.setText("")
             self.LOGININFO.setText("")
             self.tabWidget.setCurrentIndex(1) #jika Passwordnya true maka akan ke halaman utama
@@ -207,7 +204,7 @@ class MainApp(QMainWindow, ui):
             webcam = cv2.VideoCapture(0)
             count = 1
             while count < int(self.trainingCount.text()) + 1:
-                print(count)
+                # print(count)
                 ret, im = webcam.read()
                 gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
                 faces = face_cascade.detectMultiScale(gray, 1.3, 4)
@@ -248,7 +245,7 @@ class MainApp(QMainWindow, ui):
                     labels.append(int(label)) #ini untuk nambahin id ke daftar absen
                 id += 1
         (images,labels) = [numpy.array(lis) for lis in [images,labels]]
-        print(images,labels) 
+        # print(images,labels)
         (width, height) = (1280, 720)
         model = cv2.face.LBPHFaceRecognizer_create() #membuat variabel model dari algoritma LBPH
         model.train(images,labels)
@@ -264,12 +261,13 @@ class MainApp(QMainWindow, ui):
                 face_resize = cv2.resize(face,(width,height))
                 prediction =  model.predict(face_resize) #ini untuk level of prediction
                 cv2.rectangle(im,(x,y),(x+w, y+h),(0,255,0),3)
-                if(prediction[1]<50):
+                if (prediction[1] < 15):
                     confidence = 100 - (prediction[1] / 1)
-                    cv2.putText(im, '%s - %.2f%%' % (names[prediction[0]], confidence), (x-10, y-10), cv2.FONT_HERSHEY_PLAIN, 2, (0, 255, 0), 2)
-                    print(names[prediction[0]])
-                    self.currentprocess.setText("Wajah Terdaftar " + names[prediction[0]])
-                    attendanceid=0
+                    cv2.putText(im, '%s - %.2f%%' % (names[prediction[0]], confidence), (x - 10, y - 10),
+                                cv2.FONT_HERSHEY_PLAIN, 2, (0, 255, 0), 2)
+                    # print(names[prediction[0]])
+                    self.currentprocess_3.setText("Wajah Terdaftar " + names[prediction[0]] + " - %.2f%%" % confidence)
+                    attendanceid = 0
                     current_time = datetime.now().strftime("%H:%M:%S")
                     available = False
                     try:
@@ -295,7 +293,7 @@ class MainApp(QMainWindow, ui):
                             con.commit()
                     except:
                         print("Error saat memasukan ke database")
-                    print("Berhasil absen ke databse")
+                    # print("Berhasil absen ke databse")
                     self.currentprocess.setText(names[prediction[0]] + " Sudah Ter-absen")
                     cnt=0
 
@@ -348,12 +346,13 @@ class MainApp(QMainWindow, ui):
                 cv2.rectangle(im,(x,y),(x+w,y+h),(255,255,0),2)
                 face = gray[y:y+h,x:x+w]
                 face_resize = cv2.resize(face,(width,height))
-                prediction =  model.predict(face_resize) #ini untuk level of prediction
+                prediction =  model.predict(face_resize) #ini untuk level of confidence
+                print("Nilai Prediksi", prediction)
                 cv2.rectangle(im,(x,y),(x+w, y+h),(0,255,0),3)
-                if(prediction[1]<50): #nilai 800 ambang batas yg digunain, semakin kecil ambang batasnya semakin ketat kriteria pengenalan wajahnya
+                if(prediction[1]<15):
                     confidence = 100 - (prediction[1] / 1)
                     cv2.putText(im, '%s - %.2f%%' % (names[prediction[0]], confidence), (x-10, y-10), cv2.FONT_HERSHEY_PLAIN, 2, (0, 255, 0), 2)
-                    print(names[prediction[0]])
+                    # print(names[prediction[0]])
                     self.currentprocess_3.setText("Wajah Terdaftar " + names[prediction[0]] + " - %.2f%%" % confidence)
                     attendanceid =0
                     current_time = datetime.now().strftime("%H:%M:%S")
@@ -368,7 +367,7 @@ class MainApp(QMainWindow, ui):
                                 
                     except:
                         attendanceid=1
-                    print(attendanceid)
+                    # print(attendanceid)
 
                     try: #INI JIKA MAHASISWA SUDAH TERDAFTAR DI DATABASE /ABSEN DI HARI INI MAKA GABISA KE ABSEN LG
                         conn = sqlite3.connect("face-reco-mhsw.db")
@@ -381,7 +380,7 @@ class MainApp(QMainWindow, ui):
                             conn.commit()
                     except:
                          print("Error saat memasukan ke database")
-                    print("Berhasil absen ke databse")
+                    # print("Berhasil absen ke databse")
                     self.currentprocess_3.setText(names[prediction[0]] + " Sudah Ter-absen")
                     cnt=0
 

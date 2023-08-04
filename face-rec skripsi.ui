@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -651,7 +651,7 @@ QPushButton#TRAININGBUTTON:hover {
 </string>
      </property>
      <property name="text">
-      <string>Trainig Wajah</string>
+      <string>Training Wajah</string>
      </property>
     </widget>
     <widget class="QPushButton" name="TRAININGBACK">
