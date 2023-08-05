@@ -24,11 +24,11 @@ class MainApp(QMainWindow, ui):
         self.ATTLINK2.clicked.connect(self.absenMahasiswa)
         self.REPORTSLINK1.clicked.connect(self.reports)
         self.REPORTSLINK2.clicked.connect(self.reports2)
-        self.TRAININGBACK.clicked.connect(self.tampilHalamanUtama)
-        self.ATTENDANCEBACK.clicked.connect(self.tampilHalamanUtama)
-        self.ATTENDANCEBACK2.clicked.connect(self.tampilHalamanUtama)
-        self.REPORTSBACK.clicked.connect(self.tampilHalamanUtama)
-        self.REPORTSBACK_2.clicked.connect(self.tampilHalamanUtama)
+        self.TRAININGBACK.clicked.connect(self.halamanLogin)
+        self.ATTENDANCEBACK.clicked.connect(self.halamanLogin)
+        self.ATTENDANCEBACK2.clicked.connect(self.halamanLogin)
+        self.REPORTSBACK.clicked.connect(self.halamanAbsenDosen)
+        self.REPORTSBACK_2.clicked.connect(self.halamanAbsenMahasiswa)
         self.TRAININGBUTTON.clicked.connect(self.start_training)
         self.RECORD.clicked.connect(self.record_attendance)
         self.RECORD2.clicked.connect(self.record_mahasiswa)
@@ -60,14 +60,32 @@ class MainApp(QMainWindow, ui):
             print("Terdapat Error di Database")
 
 
+    # Tampil Halaman Login
+    def halamanLogin(self):
+        self.tabWidget.setCurrentIndex(0)
+
+    def halamanAbsenDosen(self):
+        self.tabWidget.setCurrentIndex(3)
+
+
+    def halamanAbsenMahasiswa(self):
+        self.tabWidget.setCurrentIndex(4)
 
     #-------LOGIN PROSES--------#
     def login(self):
         kataSandi = self.PASSWORD.text()
-        if (kataSandi == "Gunadarma2019"):
+        if (kataSandi == "1"):
             self.PASSWORD.setText("")
             self.LOGININFO.setText("")
-            self.tabWidget.setCurrentIndex(1) #jika Passwordnya true maka akan ke halaman utama
+            self.tabWidget.setCurrentIndex(2) #jika Passwordnya true maka akan ke halaman utama
+        elif (kataSandi == "2"):
+            self.PASSWORD.setText("")
+            self.LOGININFO.setText("")
+            self.tabWidget.setCurrentIndex(3)
+        elif (kataSandi == "3"):
+            self.PASSWORD.setText("")
+            self.LOGININFO.setText("")
+            self.tabWidget.setCurrentIndex(4)
         else:
             self.LOGININFO.setText("Password Salah")
             self.PASSWORD.setText("")
