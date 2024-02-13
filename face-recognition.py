@@ -74,15 +74,15 @@ class MainApp(QMainWindow, ui):
     #-------LOGIN PROSES--------#
     def login(self):
         kataSandi = self.PASSWORD.text()
-        if (kataSandi == "1"):
+        if (kataSandi == "Training2019"):
             self.PASSWORD.setText("")
             self.LOGININFO.setText("")
             self.tabWidget.setCurrentIndex(2) #jika Passwordnya true maka akan ke halaman utama
-        elif (kataSandi == "2"):
+        elif (kataSandi == "Dosen2019"):
             self.PASSWORD.setText("")
             self.LOGININFO.setText("")
             self.tabWidget.setCurrentIndex(3)
-        elif (kataSandi == "3"):
+        elif (kataSandi == "Mahasiswa2019"):
             self.PASSWORD.setText("")
             self.LOGININFO.setText("")
             self.tabWidget.setCurrentIndex(4)
@@ -209,6 +209,7 @@ class MainApp(QMainWindow, ui):
 
     #--------PROSES TRAINING WAJAH---------#
     def start_training(self):
+       
         datasets = 'datasets'
         sub_data = self.traineeName.text()
         path = os.path.join(datasets, sub_data)
@@ -279,7 +280,7 @@ class MainApp(QMainWindow, ui):
                 face_resize = cv2.resize(face,(width,height))
                 prediction =  model.predict(face_resize) #ini untuk level of prediction
                 cv2.rectangle(im,(x,y),(x+w, y+h),(0,255,0),3)
-                if (prediction[1] < 15):
+                if (prediction[1] < 30):
                     confidence = 100 - (prediction[1] / 1)
                     cv2.putText(im, '%s - %.2f%%' % (names[prediction[0]], confidence), (x - 10, y - 10),
                                 cv2.FONT_HERSHEY_PLAIN, 2, (0, 255, 0), 2)
@@ -320,7 +321,7 @@ class MainApp(QMainWindow, ui):
                     cv2.putText(im,"Tidak Dikenal",(x-10,y-10),cv2.FONT_HERSHEY_PLAIN,2,(0,0,255),2)
                     if(cnt>100):
                         print("Wajah Tidak Dikenal")
-                        self.currentprocess.setText("Wajah Tidak Dikenal" + names[prediction[0]])
+                        self.currentprocess.setText("Wajah Tidak Dikenal")
                         cv2.imwrite("unKnown.jpg",im)
                         cnt=0
             cv2.imshow("Face Recognition",im)
@@ -367,7 +368,7 @@ class MainApp(QMainWindow, ui):
                 prediction =  model.predict(face_resize) #ini untuk level of confidence
                 print("Nilai Prediksi", prediction)
                 cv2.rectangle(im,(x,y),(x+w, y+h),(0,255,0),3)
-                if(prediction[1]<15):
+                if(prediction[1]<20):
                     confidence = 100 - (prediction[1] / 1)
                     cv2.putText(im, '%s - %.2f%%' % (names[prediction[0]], confidence), (x-10, y-10), cv2.FONT_HERSHEY_PLAIN, 2, (0, 255, 0), 2)
                     # print(names[prediction[0]])
